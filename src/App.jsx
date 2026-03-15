@@ -6,6 +6,7 @@ import Hero from './components/sections/Hero';
 import Competencies from './components/sections/Competencies';
 import ProjectsSection from './components/sections/ProjectsSection';
 import Contact from './components/sections/Contact';
+import References from './components/sections/References';
 import ProjectModal from './components/common/ProjectModal';
 import { useProjectFilter } from './hooks/useProjectFilter';
 
@@ -40,6 +41,7 @@ export default function App() {
             displayedProjects={filterHooks.displayedProjects}
             onProjectClick={setSelectedProject}
           />
+          <References />
           <Contact />
         </main>
         <Footer />

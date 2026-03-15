@@ -19,7 +19,7 @@ export const ThemeProvider = ({ children }) => {
     localStorage.setItem('theme', theme);
 
     let metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    const color = theme === 'dark' ? '#0f172a' : '#f1f5f9';
+    const color = theme === 'dark' ? '#020617' : '#f1f5f9'; // Matches slate-950 and slate-100
     if (metaThemeColor) metaThemeColor.setAttribute('content', color);
   }, [theme]);
 

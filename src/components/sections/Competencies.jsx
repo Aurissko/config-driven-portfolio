@@ -48,7 +48,7 @@ export default function Competencies({ onSkillClick }) {
             </div>
           </TerminalCard>
         </div>
-        <div className="w-full max-w-2xl mx-auto flex flex-col justify-center bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-2xl p-6 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+        <div className="w-full max-w-2xl mx-auto flex flex-col justify-center bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-2xl p-4 sm:p-6 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] overflow-hidden">
           <h4 className="text-center font-mono text-[10px] font-bold text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-widest">Skill Proficiency Analysis</h4>
           <SkillsRadar theme={theme} />
         </div>

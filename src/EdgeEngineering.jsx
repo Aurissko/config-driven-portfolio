@@ -58,7 +58,7 @@ export default function EdgeEngineering() {
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
       <div className="h-48 w-full bg-[url('https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:opacity-100 transition-opacity"></div>
-      <div className="p-8">
+      <div className="p-5 sm:p-8">
         <div className="flex gap-2 mb-4 flex-wrap">
           <span className="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-medium rounded-full">Ansible</span>
           <span className="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-medium rounded-full">Cisco ACI</span>

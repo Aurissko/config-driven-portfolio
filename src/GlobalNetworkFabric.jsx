@@ -75,7 +75,7 @@ export default function GlobalNetworkFabric() {
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
       <div className="h-48 w-full bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:opacity-100 transition-opacity"></div>
-      <div className="p-8">
+      <div className="p-5 sm:p-8">
         <div className="flex gap-2 mb-4 flex-wrap">
           <span className="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-medium rounded-full">AWS TGW</span>
           <span className="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-medium rounded-full">Palo Alto</span>

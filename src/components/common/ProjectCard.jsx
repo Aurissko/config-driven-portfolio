@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import TerminalCard from './TerminalCard';
 import Card from './Card';
 import TechPill from './TechPill';
 
@@ -34,7 +33,9 @@ export default function ProjectCard({ project, onProjectClick, index = 0 }) {
           <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
         </h4>
         <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed text-sm">{project.impactStatement}</p>
-        <TerminalCard title="tech-stack.sh"><div className="flex flex-wrap gap-2">{project.tags.map((tag, i) => <TechPill key={i} tech={tag} />)}</div></TerminalCard>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag, i) => <TechPill key={i} tech={tag} />)}
+        </div>
       </div>
     </Card>
   );

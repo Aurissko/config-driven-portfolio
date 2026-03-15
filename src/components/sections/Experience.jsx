@@ -33,7 +33,7 @@ export default function Experience({ onSkillClick, onViewProjects }) {
         </ul>
         {employerProjects.length > 0 && (
           <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
-            <button onClick={() => onViewProjects(job.id)} className="group flex items-center gap-2 font-medium transition-all text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+            <button onClick={() => onViewProjects(`Employer: ${job.id}`)} className="group flex items-center gap-2 font-medium transition-all text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
               View Featured Projects <MoveRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
             </button>
           </div>

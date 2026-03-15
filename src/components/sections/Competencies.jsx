@@ -3,13 +3,13 @@ import SectionHeading from '../common/SectionHeading';
 import TerminalCard from '../common/TerminalCard';
 import TechPill from '../common/TechPill';
 import SkillsRadar from './SkillsRadar';
-import { skillsConfig } from '../../data/skills';
+import { skillsConfig } from '../../data/projectData';
 import { projects } from '../../data/projects';
 import { useThemeContext } from '../../context/ThemeContext';
 
 export default function Competencies({ onSkillClick }) {
   const { theme } = useThemeContext();
-  
+
   const getProjectCount = (skills) => {
     return projects.filter(p => p.tags.some(tag => skills.includes(tag))).length;
   };
@@ -19,28 +19,28 @@ export default function Competencies({ onSkillClick }) {
       <SectionHeading title="Core Competencies" />
       <div className="flex flex-col gap-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <TerminalCard title="automation-and-iac.sh" count={getProjectCount(skillsConfig.automationAndIac)}>
+          <TerminalCard title="automation-and-iac.sh" count={getProjectCount(skillsConfig.automationAndIac)} onCountClick={() => onSkillClick('SkillGroup: automationAndIac')}>
             <div className="flex flex-wrap gap-2 font-mono">
               {skillsConfig.automationAndIac.map(skill => (
                 <TechPill key={skill} tech={skill} onClick={onSkillClick} />
               ))}
             </div>
           </TerminalCard>
-          <TerminalCard title="netdevops-and-cicd.sh" count={getProjectCount(skillsConfig.netDevOps)}>
+          <TerminalCard title="netdevops-and-cicd.sh" count={getProjectCount(skillsConfig.netDevOps)} onCountClick={() => onSkillClick('SkillGroup: netDevOps')}>
             <div className="flex flex-wrap gap-2 font-mono">
               {skillsConfig.netDevOps.map(skill => (
                 <TechPill key={skill} tech={skill} onClick={onSkillClick} />
               ))}
             </div>
           </TerminalCard>
-          <TerminalCard title="cloud-and-virtualization.sh" count={getProjectCount(skillsConfig.cloudAndVirtualization)}>
+          <TerminalCard title="cloud-and-virtualization.sh" count={getProjectCount(skillsConfig.cloudAndVirtualization)} onCountClick={() => onSkillClick('SkillGroup: cloudAndVirtualization')}>
             <div className="flex flex-wrap gap-2 font-mono">
               {skillsConfig.cloudAndVirtualization.map(skill => (
                 <TechPill key={skill} tech={skill} onClick={onSkillClick} />
               ))}
             </div>
           </TerminalCard>
-          <TerminalCard title="routing-and-vendors.sh" count={getProjectCount(skillsConfig.coreRoutingAndVendors)}>
+          <TerminalCard title="routing-and-vendors.sh" count={getProjectCount(skillsConfig.coreRoutingAndVendors)} onCountClick={() => onSkillClick('SkillGroup: coreRoutingAndVendors')}>
             <div className="flex flex-wrap gap-2 font-mono">
               {skillsConfig.coreRoutingAndVendors.map(skill => (
                 <TechPill key={skill} tech={skill} onClick={onSkillClick} />

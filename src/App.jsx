@@ -38,6 +38,7 @@ export default function App() {
             setActiveFilter={filterHooks.setActiveFilter}
             filters={filterHooks.filters}
             isEmployerFilter={filterHooks.isEmployerFilter}
+            isSkillGroupFilter={filterHooks.isSkillGroupFilter}
             displayedProjects={filterHooks.displayedProjects}
             onProjectClick={setSelectedProject}
           />

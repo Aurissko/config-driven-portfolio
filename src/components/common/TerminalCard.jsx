@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import { cn } from '../../utils/cn';
 
-export default function TerminalCard({ title, count, children, className = '' }) {
+export default function TerminalCard({ title, count, onCountClick, children, className = '' }) {
   return (
     <Card className={cn("overflow-hidden hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]", className)}>
       <div className="flex items-center justify-between px-4 h-10 border-b border-slate-200/60 dark:border-white/10 bg-slate-50/50 dark:bg-slate-800/50 transition-colors duration-500 ease-in-out">
@@ -15,9 +15,9 @@ export default function TerminalCard({ title, count, children, className = '' })
           )}
         </div>
         {count !== undefined && (
-          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-slate-200/50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 transition-colors duration-500 ease-in-out">
+          <button onClick={onCountClick} className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-slate-200/50 hover:bg-blue-100 dark:bg-slate-700/50 dark:hover:bg-blue-900/50 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 cursor-pointer focus:outline-none">
             {count} Project{count !== 1 ? 's' : ''}
-          </span>
+          </button>
         )}
       </div>
       <div className="p-4">{children}</div>

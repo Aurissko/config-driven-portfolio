@@ -7,7 +7,7 @@ import Card from '../common/Card';
 import { experienceData, projects } from '../../utils/dataLoader';
 
 export default function Experience({ onSkillClick, onViewProjects }) {
-  const [activeExperience, setActiveExperience] = useState(experienceData[0].id);
+  const [activeExperience, setActiveExperience] = useState(experienceData?.[0]?.id || null);
   const [expandedBullets, setExpandedBullets] = useState({});
   const activeJob = useMemo(() => experienceData.find(j => j.id === activeExperience), [activeExperience]);
 
@@ -22,11 +22,12 @@ export default function Experience({ onSkillClick, onViewProjects }) {
           <p className="font-medium text-blue-600 dark:text-blue-400 mt-1">{job.company}</p>
         </div>
         <div className="flex flex-wrap gap-2 mb-6">
-          {job.techStack.map(tech => <TechPill key={tech} tech={tech} onClick={onSkillClick} />)}
+        {(job.techStack || []).map(tech => <TechPill key={tech} tech={tech} onClick={onSkillClick} />)}
         </div>
         <ul className="space-y-4 text-slate-600 dark:text-slate-300">
-          {job.points.map((point, idx) => {
-            const [strong, ...rest] = point.split(':');
+        {(job.points || []).map((point, idx) => {
+            const pointText = typeof point === 'string' ? point : String(point || '');
+            const [strong, ...rest] = pointText.split(':');
             return <ExpandableBullet key={idx} strong={strong} detail={rest.join(':')} isExpanded={expandedBullets[`${job.id}-${idx}`]} onToggle={() => toggleBullet(job.id, idx)} />;
           })}
         </ul>
@@ -40,6 +41,8 @@ export default function Experience({ onSkillClick, onViewProjects }) {
       </div>
     );
   };
+
+  if (!experienceData || experienceData.length === 0) return null;
 
   return (
     <section>

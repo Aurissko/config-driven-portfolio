@@ -34,7 +34,7 @@ export default function ProjectCard({ project, onProjectClick, index = 0 }) {
         </h4>
         <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed text-sm">{project.impactStatement}</p>
         <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, i) => <TechPill key={i} tech={tag} />)}
+          {(project.tags || []).map((tag, i) => <TechPill key={i} tech={tag} />)}
         </div>
       </div>
     </Card>

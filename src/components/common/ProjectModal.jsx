@@ -25,11 +25,11 @@ export default function ProjectModal({ project, onClose }) {
           <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">{project.description}</p>
           
           <div className="space-y-8">
-            {project.sections.map((section, idx) => (
+            {(project.sections || []).map((section, idx) => (
               <div key={idx}>
                 <h5 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3 font-mono">{section.title}</h5>
                 <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 ml-2">
-                  {section.items.map((item, itemIdx) => (
+                  {(section.items || []).map((item, itemIdx) => (
                     <li key={itemIdx} className="leading-relaxed">
                       <strong className="text-slate-800 dark:text-slate-200">{item.name}: </strong>
                       {item.detail}

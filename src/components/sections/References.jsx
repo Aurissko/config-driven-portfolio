@@ -4,6 +4,8 @@ import { User, CheckCircle2, MessageSquare, ExternalLink } from 'lucide-react';
 import { references } from '../../utils/dataLoader';
 
 export default function References() {
+  if (!references || references.length === 0) return null;
+
   return (
     <section>
       <SectionHeading title="Peer Feedback" />

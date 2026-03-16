@@ -1,5 +1,5 @@
 import React from 'react';
-import { contactConfig } from '../../data/config';
+import { contactConfig } from '../../utils/dataLoader';
 
 export default function Contact() {
   return (

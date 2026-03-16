@@ -4,8 +4,7 @@ import SectionHeading from '../common/SectionHeading';
 import TechPill from '../common/TechPill';
 import ExpandableBullet from '../common/ExpandableBullet';
 import Card from '../common/Card';
-import { experienceData } from '../../data/experience';
-import { projects } from '../../data/projects';
+import { experienceData, projects } from '../../utils/dataLoader';
 
 export default function Experience({ onSkillClick, onViewProjects }) {
   const [activeExperience, setActiveExperience] = useState(experienceData[0].id);

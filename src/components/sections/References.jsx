@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeading from '../common/SectionHeading';
 import { User, CheckCircle2, MessageSquare, ExternalLink } from 'lucide-react';
-import { references } from '../../data/portfolioData';
+import { references } from '../../utils/dataLoader';
 
 export default function References() {
   return (

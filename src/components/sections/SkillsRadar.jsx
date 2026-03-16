@@ -1,14 +1,6 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts';
-
-const data = [
-  { subject: 'Python', score: 90 },
-  { subject: 'Golang', score: 85 },
-  { subject: 'Terraform', score: 95 },
-  { subject: 'BGP/Routing', score: 95 },
-  { subject: 'Cloud Architecture', score: 90 },
-  { subject: 'Security Orchestration', score: 85 },
-];
+import { skillsRadarData } from '../../utils/dataLoader';
 
 export default function SkillsRadar({ theme }) {
   const isDark = theme === 'dark';
@@ -21,7 +13,7 @@ export default function SkillsRadar({ theme }) {
   return (
     <div className="w-full h-[300px] md:h-[350px] flex items-center justify-center -ml-2">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="65%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="65%" data={skillsRadarData}>
           <PolarGrid stroke={gridColor} strokeDasharray="3 3" />
           <PolarAngleAxis dataKey="subject" tick={{ fill: textColor, fontSize: 11, fontFamily: 'monospace' }} />
           <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />

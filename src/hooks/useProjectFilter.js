@@ -1,10 +1,9 @@
 import { useState, useMemo } from 'react';
-import { projects } from '../data/projects';
-import { skillsConfig } from '../data/projectData';
+import { projects, skillsConfig } from '../utils/dataLoader';
 
 export const useProjectFilter = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const filters = useMemo(() => ['All', ...new Set(projects.flatMap(p => p.categories))], []);
+  const filters = useMemo(() => ['All', ...new Set(projects.flatMap(p => p.categories || []))], []);
 
   const isEmployerFilter = activeFilter.startsWith('Employer: ');
   const isSkillGroupFilter = activeFilter.startsWith('SkillGroup: ');
@@ -16,9 +15,9 @@ export const useProjectFilter = () => {
       if (isSkillGroupFilter) {
         const groupKey = activeFilter.replace('SkillGroup: ', '');
         const skills = skillsConfig[groupKey] || [];
-        return p.tags.some(tag => skills.includes(tag));
+        return (p.tags || []).some(tag => skills.includes(tag));
       }
-      return p.categories.includes(activeFilter) || p.tags.includes(activeFilter);
+      return (p.categories || []).includes(activeFilter) || (p.tags || []).includes(activeFilter);
     });
   }, [activeFilter, isEmployerFilter, isSkillGroupFilter]);
 

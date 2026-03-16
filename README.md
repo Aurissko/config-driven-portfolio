@@ -4,7 +4,7 @@ A sleek, highly customizable, and fully dynamic portfolio template designed spec
 
 This template is **100% config-driven**. You do not need to know React or touch any frontend code to build a beautiful, interactive portfolio. Simply edit one JSON file, and the application does the rest.
 
-![Portfolio Preview](https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop) *(Placeholder Image)*
+**👀 Live Demo:** [https://aurimas.sh](https://aurimas.sh) (Built using this template)
 
 ## ✨ Features
 

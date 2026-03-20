@@ -1,4 +1,6 @@
 {
+  "requireReferenceApproval": true,
+  "adminEmails": ["your.email@example.com"],
   "profileData": {
     "name": "Your Name",
     "headline": "Placeholder Headline: Your Professional Title or Tagline.",

@@ -15,11 +15,15 @@ dist/
 dist-ssr/
 build/
 
+# Cloudflare / Wrangler
+.wrangler/
+
 # Environment variables
 .env
 .env.*
 !.env.example
 *.local
+.dev.vars
 
 # Editor/IDE and OS files
 .vscode/*

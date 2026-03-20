@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS references_table (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  email TEXT,
+  picture TEXT,
+  comment TEXT NOT NULL,
+  approved BOOLEAN DEFAULT 0,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

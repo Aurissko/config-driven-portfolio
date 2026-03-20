@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Experience from './components/sections/Experience';
@@ -9,16 +10,11 @@ import Contact from './components/sections/Contact';
 import References from './components/sections/References';
 import ProjectModal from './components/common/ProjectModal';
 import { useProjectFilter } from './hooks/useProjectFilter';
+import AdminReferences from './components/admin/AdminReferences';
 
-export default function App() {
+function Portfolio() {
   const filterHooks = useProjectFilter();
   const [selectedProject, setSelectedProject] = useState(null);
-
-  // Apply background styles & prevent horizontal bounce on the root HTML/Body for iOS Safari
-  useEffect(() => {
-    document.documentElement.classList.add('overflow-x-hidden');
-    document.body.classList.add('bg-slate-100', 'dark:bg-slate-950', 'transition-colors', 'duration-500', 'overflow-x-hidden');
-  }, []);
 
   return (
     <div className={`min-h-screen font-sans bg-slate-100 dark:bg-slate-950 transition-colors duration-500 ease-in-out flex flex-col relative overflow-x-hidden ${selectedProject ? 'overflow-hidden' : ''}`}>
@@ -49,5 +45,29 @@ export default function App() {
       </div>
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </div>
+  );
+}
+
+export default function App() {
+  // Apply background styles & prevent horizontal bounce on the root HTML/Body for iOS Safari
+  useEffect(() => {
+    document.documentElement.classList.add('overflow-x-hidden');
+    document.body.classList.add('bg-slate-100', 'dark:bg-slate-950', 'transition-colors', 'duration-500', 'overflow-x-hidden');
+  }, []);
+
+  return (
+    <Router>
+      <Routes>
+        {/* Main Portfolio Route */}
+        <Route path="/" element={<Portfolio />} />
+        
+        {/* Secure Admin Dashboard Route */}
+        <Route path="/admin" element={
+          <div className="min-h-screen bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-200 font-sans transition-colors duration-500 ease-in-out flex flex-col">
+            <AdminReferences />
+          </div>
+        } />
+      </Routes>
+    </Router>
   );
 }

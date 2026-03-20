@@ -10,6 +10,9 @@ const config = rawConfig || {};
 // will never crash (e.g. "cannot read properties of undefined (reading 'map')") 
 // even if a user accidentally deletes a whole section from the JSON file.
 // =====================================================================================
+export const requireReferenceApproval = config.requireReferenceApproval !== undefined ? config.requireReferenceApproval : true;
+export const adminEmails = Array.isArray(config.adminEmails) ? config.adminEmails : [];
+
 export const profileData = config.profileData || {
   name: "Name Missing",
   headline: "Headline Missing",
